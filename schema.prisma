@@ -12,7 +12,8 @@ datasource db {
 
 model Places {
     id                  Int     @id @default(autoincrement())
-    census_id           String  @unique
+    state               Int
+    place               Int
     name                String  @unique
     population_total    Int     @default(0)
     population_white    Int     @default(0)
@@ -231,4 +232,6 @@ model Places {
     gross_rent_2500_3000	Int	@default(0)
     gross_rent_3000_plus	Int	@default(0)
     gross_rent_median	Int	@default(0)
+
+    @@unique([state, place])
 }
