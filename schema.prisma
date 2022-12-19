@@ -11,6 +11,8 @@ datasource db {
 }
 
 model Places {
+
+    @@unique([state, place])
     id                  Int     @id @default(autoincrement())
     state               Int
     place               Int
@@ -233,5 +235,6 @@ model Places {
     gross_rent_3000_plus	Int	@default(0)
     gross_rent_median	Int	@default(0)
 
-    @@unique([state, place])
+    // generated scores
+    gross_rent_score    Float @default(0)
 }
