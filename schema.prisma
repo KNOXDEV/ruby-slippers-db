@@ -14,7 +14,7 @@ model Places {
     id                  Int     @id @default(autoincrement())
     state               Int
     place               Int
-    name                String  @unique
+    name                String  @default("")
     population_total    Int     @default(0)
     population_white    Int     @default(0)
     population_black    Int     @default(0)
